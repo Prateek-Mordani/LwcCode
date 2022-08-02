@@ -21,7 +21,7 @@ export default class ShowProfile extends LightningElement {
     data=[];
     connectedCallback(){
         console.log('skfhweki');
-    }
+    }    //this
 
 
 }
