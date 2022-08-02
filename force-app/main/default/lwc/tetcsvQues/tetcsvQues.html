@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="upload csv">
+        <lightning-input type="file" label="Choose your csv file" onchange={handler}></lightning-input>
+        <lightning-button label="ADD ROW" onclick={AddRow}></lightning-button>
+        <lightning-datatable if:true={check}
+                                class="dTable"
+                                key-field="name"
+                                 data={data}
+                                 columns={columns}
+                                 show-row-number-column
+                                 row-number-offset={rowOffset}
+                                 draft-values={fldsItemValues} 
+                                 suppress-bottom-bar="false"
+                                 onsave={saveHandleAction}
+                                ></lightning-datatable>        
+                                <lightning-button  variant="neutral" label="Cancel" title="Cancel" onclick={refreshComponent} class="slds-m-left_x-small"></lightning-button>
+        <lightning-button if:true={check} variant="neutral" label="Save" title="Save" type="submit" onsave={handleSave} draft-values={draftValues} onclick={handleSave} class="slds-m-left_x-small"></lightning-button>
+    </lightning-card>
+</template>

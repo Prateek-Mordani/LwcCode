@@ -1,0 +1,55 @@
+<template >
+    <lightning-card title="Query Selector">
+    <lightning-combobox
+            name="progress"
+            value=""
+            placeholder="Select Progress"
+            options={options}
+            onchange={handleChange}
+            required
+    ></lightning-combobox>
+    <p>Selected value is: {value}</p>
+    <template if:true={lstOptions}>
+        <lightning-dual-listbox name="languages"
+                                    label="Select Languages"
+                                    source-label="Available"
+                                    selected-label="Selected"
+                                    field-level-help="Select your preferred languages"
+                                    options={lstOptions}
+                                    class="Fields"
+                                    value=""></lightning-dual-listbox>
+                                
+<lightning-input type="checkbox-button" label="Where" name="Where" onchange={wantWhere}></lightning-input>
+<template if:true={whereReq}>
+    <template for:each={arr} for:item="item">
+        <!-- {combo:"Where",fi:"",la:"where"} -->
+        <div key={count}>
+            <label class="label1">{item.la}</label>
+    <lightning-combobox 
+    name="progress"
+    value={item.combo}
+ 
+    options={lstOptions}
+    class="whfield"
+></lightning-combobox>
+<lightning-input class="Where" value={item.fi}></lightning-input>
+</div>
+</template>
+
+<lightning-button label="And" onclick={andOr}></lightning-button>
+<lightning-button label="Or" onclick={andOr}></lightning-button>
+</template>
+<lightning-button variant="brand" label="submit" onclick={handleChange1}></lightning-button>
+</template>
+</lightning-card>
+<template if:true={datarecord}>
+    <div style="height: 300px;">
+        <lightning-datatable
+                key-field="id"
+                data={datarecord}
+                columns={columns}>
+        </lightning-datatable>
+    </div>    
+</template>
+
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="parent comp">
+        <lightning-button label="click" onclick={handler8}></lightning-button>
+        <div class="tdiv">
+
+        </div>
+        <c-child-comp onselect={handler}
+                      onselect1={handler1}
+                      onselect2={handler2}>
+        </c-child-comp>
+        <div>
+            child 1:{isSelected}
+            child 2:{isSelected1}
+            child 3:{isSelected2}
+        </div>
+    </lightning-card>
+    
+</template>

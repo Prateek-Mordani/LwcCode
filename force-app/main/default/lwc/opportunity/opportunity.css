@@ -1,0 +1,13 @@
+body{
+    background-color: brown;
+}
+.menu{
+    position: absolute;
+    right: 2rem;
+    margin-top: -2px;
+}
+.card {
+    display: flex;
+    height: 100px;
+    padding: 0.2rem;
+}

@@ -1,0 +1,62 @@
+<template>
+    <template for:each={status} for:item="stats" for:index="i">
+       
+            <lightning-button key={stats} value={i} variant={stats.vari} class="oppStats" label={stats.val} onclick={ShowRes}></lightning-button>
+        </template>
+            <template if:true={check}>
+                <div class="outercard">
+                <template for:each={Opportunities} for:item="opps">
+                    <div key={opps} class="card">
+                    <lightning-card if:true={opps.el1} title={CurrStats} class="slds-col">
+                        <div class="menu">
+                        <lightning-button-menu alternative-text="Show menu">
+                            <lightning-menu-item value={opps.el1.Id} label="Prospecting" onclick={changestats} ></lightning-menu-item>
+                            <lightning-menu-item value={opps.el1.Id} label="Value Proposition" onclick={changestats} ></lightning-menu-item>
+                            <lightning-menu-item value={opps.el1.Id} label="Needs Analysis" onclick={changestats} ></lightning-menu-item>
+                            <lightning-menu-item value={opps.el1.Id} label="Qualification" onclick={changestats} ></lightning-menu-item>
+                        </lightning-button-menu>
+                    </div>
+                        <div>
+                            Opportunity Name:{opps.el1.Name}<br>
+                            CloseDate:{opps.el1.CloseDate} 
+                        </div>
+
+                    </lightning-card>
+                    <lightning-card if:true={opps.el2} title={CurrStats} class="slds-col">
+                        <div class="menu">
+                        <lightning-button-menu alternative-text="Show menu">
+                            <lightning-menu-item value={opps.el2.Id} label="Prospecting" onclick={changestats} ></lightning-menu-item>
+                            <lightning-menu-item value={opps.el2.Id} label="Value Proposition" onclick={changestats} ></lightning-menu-item>
+                            <lightning-menu-item value={opps.el2.Id} label="Needs Analysis" onclick={changestats} ></lightning-menu-item>
+                            <lightning-menu-item value={opps.el2.Id} label="Qualification" onclick={changestats} ></lightning-menu-item>
+                        </lightning-button-menu>
+                    </div>
+                        <div>
+                            Opportunity Name:{opps.el2.Name}<br>
+                            CloseDate:{opps.el2.CloseDate}
+                        </div>
+                        
+                    </lightning-card>
+                    <lightning-card if:true={opps.el3}  title={CurrStats} class="slds-col">
+                        <div class="menu">
+                        <lightning-button-menu alternative-text="Show menu">
+                            <lightning-menu-item value={opps.el3.Id} label="Prospecting" onclick={changestats} ></lightning-menu-item>
+                            <lightning-menu-item value={opps.el3.Id} label="Value Proposition" onclick={changestats} ></lightning-menu-item>
+                            <lightning-menu-item value={opps.el3.Id} label="Needs Analysis" onclick={changestats} ></lightning-menu-item>
+                            <lightning-menu-item value={opps.el3.Id} label="Qualification" onclick={changestats} ></lightning-menu-item>
+                        </lightning-button-menu>
+                    </div>
+                        <div>
+                            Opportunity Name:{opps.el3.Name}<br>
+                            CloseDate:{opps.el3.CloseDate}
+                        </div>
+                        
+                    </lightning-card>
+                </div>
+
+          
+            </template>
+        </div>
+        
+    </template>
+</template>

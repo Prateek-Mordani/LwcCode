@@ -1,0 +1,22 @@
+<template>
+    <lightning-card>
+        <lightning-datatable
+                key-field="id"
+                data={data}
+                columns={columns}>
+        </lightning-datatable>
+        <lightning-button label="reset" onclick={reset}></lightning-button>
+        <lightning-button label="thisbutton" variant="brand" class="btn"></lightning-button>
+        <div onselect={handler}>
+           
+        <c-parent-comp onselect={handler}
+                        onselect1={handler1}
+                        onselect2={handler2}
+                        valfromparent={value}
+                        temp={butt}>
+
+        </c-parent-comp >
+    </div>
+        <div>{selected} outta 3 selected</div>
+    </lightning-card>
+</template>

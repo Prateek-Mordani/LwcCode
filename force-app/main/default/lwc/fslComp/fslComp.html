@@ -1,0 +1,31 @@
+<template>
+
+    <lightning-card title="reschedule or cancel an appointment">
+        <div>recordId={recordId}</div>
+        <lightning-combobox value={value}
+                            options={options}
+                            label="cancel or reject"
+                            placeholder="select one"
+                            class="combo"
+                            onchange={comboHandler}>
+                        </lightning-combobox>
+
+        <lightning-combobox if:true={check} 
+                            value={tval}
+                            options={toptions}
+                            label="reason for cancelation or re-scheduling"
+                            placeholder="select"
+                            class="tcombo"
+                            ></lightning-combobox>
+        <lightning-button label="submit" onclick={handler}></lightning-button>
+        <template if:true={tcheck}>
+            <lightning-card title="schedule an appointment">
+                <lightning-input type="datetime" label="schedule start" class="startdt"></lightning-input>
+                <lightning-input type="datetime" label="schedule end" class="enddt"></lightning-input>
+                <lightning-button label="update" onclick={updatehandler}></lightning-button>
+            </lightning-card>
+        </template>
+        <div>{status}</div>
+    </lightning-card>
+    
+</template>

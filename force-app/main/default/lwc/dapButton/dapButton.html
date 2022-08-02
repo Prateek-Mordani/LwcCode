@@ -1,0 +1,26 @@
+<template>
+    <lightning-card>
+    <lightning-button label="show tracks" onclick={showtime}></lightning-button>
+    <lightning-button label="master"></lightning-button>
+    <template if:true={showbutton}>
+      <div class="slds-box">
+            <h2 class="header">Advanced Input Time</h2>
+            <lightning-input type="time" name="input4" label="Required Time field" required
+                             value="18:30:00.000Z"></lightning-input>
+                         
+        </div>
+    </template>
+        <div class="platform">platform</div>
+        <div class="track">track1</div>
+        <div class="track2">track2</div>
+        <div class="platform1">platform1</div>
+       <div class="track3">track3</div>
+       <div class="track4">track4</div>
+        <div class="platform2">platform2</div>
+        <div class="track5">track5</div>
+        <div class="track6">track6</div>
+        <div class="platform3">platform3</div>
+
+       
+    </lightning-card>
+</template>

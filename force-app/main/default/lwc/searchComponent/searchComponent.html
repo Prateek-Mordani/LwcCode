@@ -1,0 +1,20 @@
+<template>
+        <lightning-button variant="brand"
+                            label={showcon}
+                            onclick={handler}>
+        </lightning-button>
+        <template if:true={visibility}>
+            <lightning-input type="search"
+                            label="search"
+                            onchange={handlechange}
+                            value={searchKey}> 
+                
+            </lightning-input>
+            <lightning-datatable data={data}
+                                columns={columns}
+                                key-field='id'
+                                onrowselection={getrow}>
+
+            </lightning-datatable>
+        </template>
+</template>

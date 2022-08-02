@@ -1,0 +1,32 @@
+<template>
+    <lightning-card>
+     
+        <lightning-button label="Show Trains" onclick={showTrain}></lightning-button>
+        <lightning-input type="time" name="input4" label="Required Time field" required
+                             value="18:30:00.000Z" class="ShowTrainTime"></lightning-input>
+        <div if:true= {falsee} class="Platform1"><b>Platform1</b></div>
+        <div class='temp'></div>
+        <div if:true= {falsee} class="Track1">{Track1}</div>
+        <img src={photo1}>
+        <div if:true= {falsee} class="Track2">{Track2}</div>
+        <img src={photo2}>
+        <div if:true= {falsee} class="Platform2"><b>Platform2</b></div>
+        <div class='temp'><b>PLATFORM</b></div>
+        <div if:true= {falsee} class="Track3">{Track3}</div>
+        <img src={photo3}>
+        <div if:true= {falsee} class="Track4">{Track4}</div>
+        <img src={photo4}>
+        <div if:true= {falsee} class="Platform3"><b>Platform3</b></div>
+        <div class='temp'></div>
+        <div if:true= {falsee} class="Track5">{Track5}</div>
+        <img src={photo5}>
+        <div if:true= {falsee} class="Track6">{Track6}</div>
+        <img src={photo6}>
+        <div if:true= {falsee} class="Platform4"><b>Platform4</b></div>
+        <div class='temp'></div>
+        <lightning-input type="text" label="TrainName" class="train"></lightning-input>
+        <lightning-input type="time" label="Arrival Time" class="ArrTime"></lightning-input>
+        <lightning-input type="time" label="Departure Time" class="DepTime"></lightning-input>
+        <lightning-button label="Add Trains" onclick={addTrain}></lightning-button>
+    </lightning-card>
+</template>

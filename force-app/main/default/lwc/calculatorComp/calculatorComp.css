@@ -1,0 +1,15 @@
+.card {
+    padding: 100x;
+    padding: 20px;
+    height: 500px;
+    align-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.button{
+    width: 60px;
+    margin: 2px;
+    width: 100px;
+    height: 50px;
+}

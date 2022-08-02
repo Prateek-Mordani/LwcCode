@@ -1,0 +1,21 @@
+<template>
+    <lightning-card >
+        <div class="card">
+            <lightning-input label="enter an expression" class='inp'></lightning-input>
+            <lightning-button label="evaluate" onclick={handler}></lightning-button>
+        <template for:each={arr} for:item="item" >
+            <div key={item} class="slds-col">
+            <lightning-button label={item} ></lightning-button>
+        </div>
+        </template>
+        <template for:each={arr} for:item="ite">
+            <template for:each={ite} for:item="it">
+                <div key={it}>
+                    {it}
+                </div>
+            </template>
+        </template>
+        </div>
+    </lightning-card>
+
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <div class="trial">
+        <lightning-combobox
+        name="progress"
+        label="Select Object"
+        value={value}
+        placeholder="Select Progress"
+        options={objects}
+        onchange={handleChange} ></lightning-combobox>
+    </div>
+    <lightning-dual-listbox name="languages"
+    label="Select Languages"
+    source-label="Available"
+    selected-label="Selected"
+    field-level-help="Select your preferred languages"
+    options={fields}
+    onchange={fieldChange}></lightning-dual-listbox>
+
+    
+</template>

@@ -1,0 +1,49 @@
+<template>  
+        <lightning-tabset>
+            <lightning-tab label="Object Limit">
+                <lightning-card>
+
+                    <lightning-combobox
+                    name="progress"
+                    label="Select Object"
+                    value={value}
+                    placeholder="Select Progress"
+                    options={objects}
+                    onchange={handleChange} ></lightning-combobox>
+                       
+                    <lightning-checkbox-group 
+                    
+                    options={options}
+                    value={value}
+                    onchange={handleChange}></lightning-checkbox-group>
+
+                </lightning-card>
+
+            </lightning-tab>
+
+
+            <lightning-tab label="User Licenses" title="2nd tab extended title">
+            
+               <template for:each={licenses} for:item="license" for:index="i">
+                <lightning-card key={license.Ogval.Id} title={license.Ogval.Name}>
+                        <h1>TotalLicense:  {license.Ogval.TotalLicenses}</h1>
+                        <h1>Used Licenses:  {license.Ogval.UsedLicenses}</h1>
+                        <h1>Available licenses :{license.AvailableLicense}</h1>
+                </lightning-card>
+               </template>
+            
+
+            </lightning-tab>
+
+
+            <lightning-tab label="Org Limit">
+                <template for:each={OrgLimits} for:item="org" for:index="i">
+                    <lightning-card key={org.id} title={org.Name}>
+                         Limit {org.value}
+                    </lightning-card>
+                   </template>
+                
+            </lightning-tab>
+        </lightning-tabset>
+    
+</template>

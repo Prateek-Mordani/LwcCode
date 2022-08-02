@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="grandparent">
+        <lightning-button label="reset all" onclick={reset}></lightning-button>
+        <div>
+            {selected} of 3 selected
+        </div>
+
+    </lightning-card>
+    <lightning-card title ='parent'>
+        <div>
+           <h3> child 1 {c1}</h3>
+            <lightning-card title="child 1">
+                <lightning-button variant={variant} label={label1} onclick={handler}>
+
+                </lightning-button>
+            </lightning-card>
+        </div>
+        <div>
+           <h3> child 2 {c2}</h3>
+            <lightning-card title="child 2">
+                <lightning-button variant={variant1} label={label2} onclick={handler2}>
+
+                </lightning-button>
+            </lightning-card>
+        </div>
+        <div>
+            child 3 {c3}
+            <lightning-card title="child3">
+                <lightning-button variant={variant3} label={label3} onclick={handler3}></lightning-button>
+            </lightning-card>
+        </div>
+    </lightning-card>
+    
+</template>

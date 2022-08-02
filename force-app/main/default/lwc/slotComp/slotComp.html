@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Available Slots">
+        <lightning-input type="date" label="select a date for the slots"></lightning-input>
+        <lightning-combobox label="select a slot"
+                            options={options}
+                            placeholder="select one.."
+                            onchange={handleData}
+                            ></lightning-combobox>
+        <lightning-button label="Update" onclick={handleSlot}></lightning-button>
+       
+        <div>{message}</div>
+    </lightning-card>
+    
+</template>

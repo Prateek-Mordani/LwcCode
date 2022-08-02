@@ -1,0 +1,26 @@
+<template>
+    <lightning-card>
+    <lightning-input label="enter name mentioned in your account" class="nameField">    </lightning-input>
+
+        <div if:true={exist} class='check'>
+            sorry account doesn't exist
+        </div>
+        <lightning-button label="submit" onclick={showAccount}></lightning-button>
+        <template if:true={show}>
+            <div class="account-details">{name}
+            </div>
+            <lightning-button label="show balance" onclick={balance}></lightning-button>
+            <lightning-button label="last 5 transactions" onclick={statement}></lightning-button>
+            <lightning-datatable if:true={showStatement}
+                                data={data}
+                                columns={columns}
+                                key-field='id'                       >
+                                </lightning-datatable> 
+            <lightning-button label="withdraw money" onclick={withdrawl}></lightning-button>
+            <lightning-input label="enter amount" if:true={showamt} class="amount"></lightning-input>
+            <lightning-button label="submit" if:true={showamt} onclick={submit}></lightning-button>
+            <lightning-button label="deposit money" onclick={deposit}></lightning-button>
+        </template>
+
+</lightning-card>
+</template>

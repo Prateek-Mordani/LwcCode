@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <lightning-combobox     label="all accounts"
+                                options={options}
+                                value={value}
+                                placeholder="select account"
+                                onchange={handler}>
+        </lightning-combobox>
+        <template if:true={show}>
+            <lightning-datatable columns={columns}
+                                 data={data}
+                                 key-field="Id"                      >
+                                </lightning-datatable>
+        </template>
+    </lightning-card>
+
+    
+</template>
