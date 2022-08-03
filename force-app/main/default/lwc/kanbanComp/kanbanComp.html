@@ -1,6 +1,13 @@
 <template>
-    <lightning-card title="DRAG AN DROP COMPONENT">
-        
-    </lightning-card>
-    
+    <div class="card-wrapper">
+        <template for:each={pickVal} for:item="item" >
+            <div class="stageContainer" key={item} style={calcWidth}>
+                <h1 class="column_heading">{item}</h1>
+                <c-drag-and-drop-list record={records} stage={item} onlistitemdrag={handleDrag} onitemdrop={handleItemDrop}>
+
+                </c-drag-and-drop-list>
+            </div>
+           
+        </template>
+    </div>
 </template>
