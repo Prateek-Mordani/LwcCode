@@ -68,16 +68,16 @@ export default class KanbanComp extends LightningElement {
 
     handleItemDrop(event){
         let stage= event.detail;
-        // this.records = this.records.map(item=>{
-        //     return item.Id === this.recordId ? {...item, StageName:stage}:{...item};
-        // })
+        this.records = this.records.map(item=>{
+            return item.Id === this.recordId ? {...item, StageName:stage}:{...item};
+        })
         this.updateHandler(stage);
     }
 
     updateHandler(stage){
         const fields={}
         fields[ID_FIELD.fieldApiName]= this.recordId;
-        fields[stage_field.fieldApiName]=stage
+        fields[stage_field.fieldApiName]=stage;
         const recordInput={fields}
         updateRecord(recordInput).then(()=>{
             console.log("updated successfully");
