@@ -1,0 +1,16 @@
+.Cbox{
+    height: 10rem;
+    width: 12rem;
+}
+.container{
+    border: 1px solid #d8dde6;
+    width: 15rem;
+    height: 20rem;
+}
+.seat{
+    padding: 1rem;
+    display: inline-block;
+}
+.card{
+    display: flex;
+}

@@ -1,0 +1,36 @@
+<template>
+    <lightning-card class="card">
+    <lightning-combobox
+            class="Cbox"
+            name="SelectAccount"
+            label="Accounts"
+            value={value}
+            placeholder="Select Account"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+            <div style="height: 300px;">
+                <lightning-datatable
+                if:true={check}
+                        key-field="id"
+                        data={data}
+                        columns={columns}
+                        onrowaction={viewRecord}
+                        >
+                </lightning-datatable>
+            </div>
+        
+        </lightning-card>
+        <div class="container">
+            <lightning-button label="." class="slds-p-bottom_large seat" data-id="seat1" onclick={handler}> </lightning-button>
+            <lightning-button label="." class="slds-p-bottom_large seat" data-id="seat2" onclick={handler}> </lightning-button>
+            <lightning-button label="." class="slds-p-bottom_large seat" data-id="seat3" onclick={handler}> </lightning-button>
+            <lightning-button label="." class="slds-p-bottom_large seat" data-id="seat4" onclick={handler}> </lightning-button>
+            <lightning-button label="." class="slds-p-bottom_large seat" data-id="seat5" onclick={handler}> </lightning-button>
+            <lightning-button label="." class="slds-p-bottom_large seat" data-id="seat6" onclick={handler}> </lightning-button>
+            <lightning-button label="." class="slds-p-bottom_large seat" data-id="seat7" onclick={handler}> </lightning-button>
+            <lightning-button label="." class="slds-p-bottom_large seat" data-id="seat8" onclick={handler}> </lightning-button>
+            <lightning-button label="." class="slds-p-bottom_large seat" data-id="seat9" onclick={handler}> </lightning-button>
+          </div>
+        
+    
+</template>
