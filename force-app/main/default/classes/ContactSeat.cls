@@ -5,4 +5,10 @@ public with sharing class ContactSeat {
             con.seatNumber__c=seatNo;
             update con;
         }
+    @AuraEnabled
+    public static void removeSeat(string Id){
+        contact con =[select name,seatnumber__c,level__c from contact where id=:Id];
+        con.seatNumber__c=null;
+        update con;
+    }
 }
