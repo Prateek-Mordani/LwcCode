@@ -8,8 +8,16 @@
             placeholder="Select Account"
             options={options}
             onchange={handleChange} ></lightning-combobox>
-            <div style="display:flex ;">
-            <div style="height: 300px;">
+    
+            <lightning-checkbox-group name="Checkbox Group"
+            class="Cbox1"
+            options={checkOptions}
+            value={Checkvalue}
+            onchange={CheckChange}
+            variant="label-inline"></lightning-checkbox-group>
+
+            <div >
+            <div if:true={TView}>
                 <lightning-datatable
                         key-field="id"
                         data={data}
@@ -18,8 +26,10 @@
                         >
                 </lightning-datatable>
             </div>
-        
-        
+            <template if:true={GView}>
+                <c-gen_opportunitychart recid={currentAcc.Id}></c-gen_opportunitychart>
+            </template>
+        </div>
         <div class="container">
             <lightning-button label="." class="slds-p-bottom_large seat" data-id="seat1" onclick={handler} > </lightning-button>
             <lightning-button label="." class="slds-p-bottom_large seat" data-id="seat2" onclick={handler}> </lightning-button>
@@ -31,8 +41,7 @@
             <lightning-button label="." class="slds-p-bottom_large seat" data-id="seat8" onclick={handler}> </lightning-button>
             <lightning-button label="." class="slds-p-bottom_large seat" data-id="seat9" onclick={handler}> </lightning-button>
           </div>
-        </div>
-        </lightning-card>
-        
+    </lightning-card>
+    
     
 </template>

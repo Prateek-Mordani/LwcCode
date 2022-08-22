@@ -1,5 +1,5 @@
 import { LightningElement,wire } from 'lwc';
-import { getListUi } from 'lightning/uiListApi';
+import { getListUi } from 'lightning/uiListApi';    
 import Opportunities from '@salesforce/schema/Opportunity'
 import { updateRecord } from 'lightning/uiRecordApi';
 import { getObjectInfo, getPicklistValues } from 'lightning/uiObjectInfoApi';

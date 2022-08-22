@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Search Component">
+
+        <lightning-input
+        name="enter-search"
+        disabled={check}
+        label="search for a record"
+        type="search"
+        class="search"
+    ></lightning-input>
+    <lightning-button label="Search" onclick={handleClick}></lightning-button>
+    <lightning-button label="Lock Search Field" onclick={LockField}></lightning-button>
+    <lightning-button label="Clear" onclick={ClearData}></lightning-button>
+    <template for:each={soslResult} for:item="item" for:index='i'>
+        <lightning-card key={item.type} title={item.type}>
+        
+            <lightning-datatable   
+            if:true={ref}     
+            key-field="id"
+            data={item.records}
+            onrowaction={viewRecord}
+            columns={columns}>
+            
+    </lightning-datatable>
+    <br>
+</lightning-card>
+
+    </template>
+    <lightning-datatable if:true={cleared}
+                        key-field="id"
+                        data={data}
+                        columns={columns}
+                        onrowaction={viewRecord}>
+
+    </lightning-datatable>
+
+    </lightning-card>
+</template>

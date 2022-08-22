@@ -17,6 +17,13 @@ typeAttributes:{label:{fieldName:'delete'}},
 }
 ];
 export default class SeatingArrangement extends LightningElement {
+    get checkOptions() {
+        return [
+            { label: 'Tabular View', value: 'Table' },
+            { label: 'Graphical View', value: 'Graph' },
+        ];
+    }
+    Checkvalue=[];
    @track records=[];
     @track options;
     columns=columns;
@@ -28,6 +35,8 @@ export default class SeatingArrangement extends LightningElement {
     deleteSeat;
     @track parameters;
     @track error;
+    TView=false;
+    GView=false;
 
     /** Wired Apex result so it can be refreshed programmatically */
     _wiredResult;
@@ -59,6 +68,24 @@ export default class SeatingArrangement extends LightningElement {
             console.log(this.error);
         }
     }
+
+    CheckChange(e) {
+        this.Checkvalue = e.detail.value;
+        console.log(this.Checkvalue);
+        if(this.Checkvalue.includes('Table')){
+            this.TView=true;
+        }
+        else{
+            this.TView=false;
+        }
+
+        if(this.Checkvalue.includes('Graph')){
+            this.GView=true;
+        }
+        else{
+            this.GView=false;
+        }
+    }
     //  connectedCallback(){
     //     this.options=this.options;
     //     getAccounts().then(result=>{
@@ -77,6 +104,11 @@ export default class SeatingArrangement extends LightningElement {
     //     })
     //  }
     handleChange(event){
+        if(this.selectedId!=event.detail.value){
+        this.template.querySelector('.Cbox1').value=[];
+        this.TView=false;
+        this.GView=false;
+        }
         let arr=[];
         this.template.querySelectorAll('.seat').forEach(element => {
             element.label='.';
@@ -95,6 +127,7 @@ export default class SeatingArrangement extends LightningElement {
                 arr.push(element);
             }
             else{
+                
                 element.delete='delete';
                 arr.push(element);
                     
@@ -173,7 +206,7 @@ export default class SeatingArrangement extends LightningElement {
     }
     refreshData() {
 
-            refreshApex(this._wiredResult);
+        refreshApex(this._wiredResult);
             
     }
     

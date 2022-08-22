@@ -1,11 +1,13 @@
 import { LightningElement, track,api } from 'lwc';
+import { OmniscriptBaseMixin } from 'vlocity_ins/omniscriptBaseMixin';
+
 // const columns=[
 //     {label:'Name',fieldName:'Name'},
 //     {label:'ProductCode',fieldName:'ProductCode',editable: true, type:'Phone'},
 //     {label:'description',fieldName:'Description',editable:true},
 // ];
 
-export default class TetcsvQues extends LightningElement {
+export default class TetcsvQues extends OmniscriptBaseMixin(LightningElement) {
     csvString;
     columnHeader;
     @track lines;
@@ -15,6 +17,13 @@ export default class TetcsvQues extends LightningElement {
     i=0;
     data=[];
 
+    data1 = {
+        person: {
+            name: "Paulo",
+            lastName: "Orquillo",
+            role: "Salesforce Developer"
+        }
+    }
 
     get columns(){
         if(this.count<=3)  {
@@ -121,7 +130,6 @@ export default class TetcsvQues extends LightningElement {
     }
 
     AddRow(){
-       // this.check1=false;
         this.count++;  
         console.log(Object.keys(this.lines[0])[this.count]);   
         try {

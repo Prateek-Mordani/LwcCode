@@ -3,7 +3,7 @@
 <apiVersion>51.0</apiVersion>
 <runtimeNamespace>vlocity_ins</runtimeNamespace>
 <isExposed>true</isExposed>
-<description>Vlocity OmniScript Auto-generated - a3e5i000001v0ZXAAY</description>
+<description>Vlocity OmniScript Auto-generated - a3e5i000001vgsgAAA</description>
 <masterLabel>Mis_Assign/Mis_Assign/English</masterLabel>
 <targets>
 <target>lightningCommunity__Page</target>
@@ -11,7 +11,7 @@
 <target>lightning__RecordPage</target>
 <target>lightning__AppPage</target>
 <target>lightning__HomePage</target>
-<target>lightning__RecordAction</target>
+<target>lightning__RecordAction</target> 
 </targets>
 <targetConfigs>
             <targetConfig targets="lightning__AppPage, lightning__RecordPage">

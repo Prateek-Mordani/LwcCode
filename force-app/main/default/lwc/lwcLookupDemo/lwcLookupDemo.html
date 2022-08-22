@@ -1,0 +1,10 @@
+<template>  
+    <div class="slds-box">  
+      <c-lookup-comp lookup-label="Account" object-api-name="Contact" icon-name="standard:contact"  
+        onrecordselection={onAccountSelection} acc-id={accountId}></c-lookup-comp>  
+    </div>  
+    <div class="slds-box">  
+      Selected Contact Name : {accountName}  
+      Selected Contact Id  : {accountRecordId}  
+    </div>  
+  </template>  
